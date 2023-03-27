@@ -6,8 +6,8 @@
   "author": "Hans Löfgren",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --watch --mode=development",
-    "build": "webpack --mode=production",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider webpack-dev-server --watch --mode=development",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider webpack --mode=production",
     "prepare-data": "cat ../data/billboard_1965-2015.json | jq -c . > public/billboard_1965-2015.json"
   },
   "devDependencies": {
