@@ -1,10 +1,6 @@
-#!/usr/bin/env node
-import React from "react";
-import { render } from "ink";
 import meow from "meow";
-import App from "./ui";
 
-const cli = meow(
+export const args = meow(
 	`
 	Usage
 	  $ cli
@@ -24,5 +20,5 @@ const cli = meow(
 		},
 	}
 );
-
-render(<App name={cli.flags.name} />);
+export type ArgsType = typeof args;
+export type FlagsType = typeof args.flags;
