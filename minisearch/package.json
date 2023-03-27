@@ -8,7 +8,7 @@
   "scripts": {
     "start": "webpack-dev-server --watch --mode=development",
     "build": "webpack --mode=production && yarn gzip-data",
-    "gzip-data": "gzip < billboard_1965-2015.json > billboard_1965-2015.json.gz"
+    "gzip-data": "gzip < public/billboard_1965-2015.json > public/billboard_1965-2015.json.gz"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
