@@ -6,8 +6,8 @@ class App extends React.PureComponent {
   constructor (props) {
     super(props)
     const miniSearch = new MiniSearch({
-      fields: ['artist', 'title'],
-      storeFields: ['year'],
+      fields: ['description', 'tags', 'title'],
+      storeFields: ['link', 'year'],
       processTerm: (term, _fieldName) => (term.length <= 1 || stopWords.has(term)) ? null : term.toLowerCase()
     })
     ;['handleSearchChange', 'handleSearchKeyDown', 'handleSuggestionClick',
@@ -187,14 +187,16 @@ const SongList = ({ songs }) => (
   </ul>
 )
 
-const Song = ({ title, artist, year, rank }) => (
+const Song = ({ title, artist, year, link, rank }) => (
   <li className='Song'>
-    <h3>{ capitalize(title) }</h3>
-    <dl>
-      <dt>Artist:</dt> <dd>{ capitalize(artist) }</dd>
-      <dt>Year:</dt> <dd>{ year }</dd>
-      <dt>Billboard Position:</dt> <dd>{ rank }</dd>
-    </dl>
+    <a href={link} target="_blank">
+      <h3>{ capitalize(title) }</h3>
+      <dl>
+        <dt>Artist:</dt> <dd>{ capitalize(artist) }</dd>
+        <dt>Year:</dt> <dd>{ year }</dd>
+        <dt>Billboard Position:</dt> <dd>{ rank }</dd>
+      </dl>
+    </a>
   </li>
 )
 
