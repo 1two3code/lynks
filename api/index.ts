@@ -1,7 +1,7 @@
-import { NowRequest, NowResponse } from "@vercel/node";
+import { VercelRequest, VercelResponse } from "@vercel/node";
 const billboard = require('../data/billboard_1965-2015.json')
 
-export default (req: NowRequest, res: NowResponse) => {
+export default (req: VercelRequest, res: VercelResponse) => {
   const {
     query: { key },
   } = req;
@@ -13,6 +13,8 @@ export default (req: NowRequest, res: NowResponse) => {
       statusCode: 401,
     });
   }
+
+  // This little vercel function could return text/html next.js-rendered site
 
   // const dashboardHTML = buildTemplate({
   //   title: "My fruit store",
