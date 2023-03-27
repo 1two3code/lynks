@@ -1,7 +1,7 @@
-
+import { NowRequest, NowResponse } from "@vercel/node";
 const billboard = require('../data/billboard_1965-2015.json')
 
-module.exports = (req, res) => {
+export default (req: NowRequest, res: NowResponse) => {
   const {
     query: { key },
   } = req;
