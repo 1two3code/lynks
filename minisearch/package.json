@@ -7,8 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --watch --mode=development",
-    "build": "webpack --mode=production && yarn gzip-data",
-    "gzip-data": "gzip < public/billboard_1965-2015.json > public/billboard_1965-2015.json.gz"
+    "build": "webpack --mode=production",
+    "prepare-data": "cat ../data/billboard_1965-2015.json | jq -c . > public/billboard_1965-2015.json"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
