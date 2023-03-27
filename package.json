@@ -1,20 +1,33 @@
 {
   "name": "lynks",
   "version": "1.0.0",
-  "description": "",
+  "description": "lynks using 'minisearch' example",
   "main": "index.js",
+  "author": "Hans Löfgren",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --watch --mode=development",
+    "build": "webpack --mode=production",
+    "prepare-data": "cat ../data/billboard_1965-2015.json | jq -c . > public/billboard_1965-2015.json"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/1two3code/lynks.git"
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-0",
+    "babel-loader": "^8.0.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "regenerator-runtime": "^0.13.0",
+    "unfetch": "^4.0.1",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.9"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/1two3code/lynks/issues"
-  },
-  "homepage": "https://github.com/1two3code/lynks#readme"
+  "dependencies": {
+    "core-js": "3",
+    "minisearch": "^6.0.1"
+  }
 }
