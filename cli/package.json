@@ -13,7 +13,7 @@
 		"test": "xo && ava"
 	},
 	"files": [
-		"dist/cli.js"
+		"dist/index.js"
 	],
 	"dependencies": {
 		"ink": "^3.2.0",
@@ -26,7 +26,7 @@
 				"tsx"
 			],
 			"rewritePaths": {
-				"source/": "dist/"
+				"src/": "dist/"
 			}
 		}
 	},
